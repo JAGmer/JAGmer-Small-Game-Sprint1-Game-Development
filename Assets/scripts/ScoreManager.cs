@@ -7,8 +7,8 @@ public class ScoreManager : MonoBehaviour
     public int goalScore;
     public TextMeshProUGUI txtCount;
 
-    /*[SerializeField]
-    AudioClip collectSound = AudioSource.;*/
+    [SerializeField]
+    public AudioClip collectSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
         {
             currentScore++;
             other.gameObject.SetActive(false);
-            // SoundEffectsManager.instance.PlaySoundEffect(collectSound, transform, 1f);
+            SoundEffectsManager.instance.PlaySoundEffect(collectSound, transform, 1f);
             Debug.Log("Score: " + currentScore + "out of" + goalScore);
             SetCountText("Count: " + currentScore.ToString());
 

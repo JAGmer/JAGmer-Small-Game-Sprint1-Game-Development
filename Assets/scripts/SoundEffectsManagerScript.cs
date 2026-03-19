@@ -12,6 +12,7 @@ public class SoundEffectsManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(soundEffectObject);
         }
     }
 
